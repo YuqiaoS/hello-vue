@@ -1,4 +1,5 @@
 # hello-vue
+This repo serves as playground for testing Vue stuff, like lifecycle, reactivity, components and such.
 
 ## Project setup
 ```
