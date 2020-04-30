@@ -1,9 +1,9 @@
 <template>
     <div>
-        <p>{{curVar}}</p>
-        <button @click="changeCurRef">change ref</button>
+        <p>{{curVar}}</p><p>{{testVar}}</p>
         <button @click="updateCurVar">update cur</button>
-
+        <button @click="changeToTestRef">change to test ref</button>
+        <button @click="changeToNewRef">change to new ref</button>
     </div>
 </template>
 
@@ -15,7 +15,8 @@ export default {
     const {
         testVar,
         curVar,
-        changeCurRef,
+        changeToNewRef,
+        changeToTestRef,
         updateCurVar
     } = useTest()
 
@@ -26,7 +27,8 @@ export default {
     return {
         testVar,
         curVar,
-        changeCurRef,
+        changeToNewRef,
+        changeToTestRef,
         updateCurVar
     }
   },

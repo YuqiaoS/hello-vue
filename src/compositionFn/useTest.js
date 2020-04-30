@@ -8,7 +8,13 @@ export function useTest() {
     ref: ref(0)
   })
 
-  const changeCurRef = function(){
+  // const changeCurRef = function(){
+  //   curVar.ref = testVar
+  // }
+  const changeToNewRef = function(){
+    curVar.ref = ref(0)
+  }
+  const changeToTestRef = function(){
     curVar.ref = testVar
   }
   const updateCurVar = function(){
@@ -27,7 +33,8 @@ export function useTest() {
   return {
     testVar, 
     curVar, 
-    changeCurRef, 
+    changeToTestRef, 
+    changeToNewRef,
     updateCurVar
   }
 }
