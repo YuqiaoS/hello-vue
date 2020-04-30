@@ -1,4 +1,4 @@
-import { ref, watch, reactive, watchEffect } from '@vue/composition-api'
+import { isRef, ref, watch, reactive, watchEffect } from '@vue/composition-api'
 
 export function useTest() {
   const testVar = ref(0)
@@ -7,6 +7,8 @@ export function useTest() {
     value: 0,
     ref: ref(0)
   })
+
+  console.log('is testVar ref: ', isRef(testVar))
 
   // const changeCurRef = function(){
   //   curVar.ref = testVar
@@ -22,11 +24,18 @@ export function useTest() {
     curVar.ref++
   }
 
-  watch(()=> curVar, (val) => {
-    console.log('watch', val.value, val.ref)
+  watch(()=> curVar.ref, (val) => {
+    console.log('watch', val)
+  })
+
+  watch(()=> testVar.value, (val) => {
+    console.log('watch testvar', val)
   })
 
   watchEffect(() => {
+    console.log('watchEffect', curVar.value, curVar.ref, 'testVar', testVar.value) //  testVar > RefImpl
+    console.log('is curVar ref: ', isRef(curVar)) // curVar > Observer
+    console.log('is curVar.ref ref: ', isRef(curVar.ref)) //curVar.ref > Number 
     console.log('watchEffect', curVar.value, curVar.ref)
   })
 
