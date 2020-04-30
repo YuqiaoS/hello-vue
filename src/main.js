@@ -9,7 +9,17 @@ import App from './App.vue'
 // import Layout from './Layout.vue'
 Vue.config.productionTip = false
 
-//console.log(play);
+// socketio 
+// const socket = io('http://127.0.0.1:5000')
+
+// Vue.config.productionTip = false
+
+// Vue.use(
+//   new VueSocketIO({
+//     debug:true,
+//     connection: socket
+//   })
+// ) 
 
 /* eslint-disable */
 
