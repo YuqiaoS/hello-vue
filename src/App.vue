@@ -1,17 +1,16 @@
 <template>
-  <v-app>
-<vlistgroup />
-  </v-app>
+    <TestCompFn />
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld'
-import vlistgroup from './components/vlistgroup'
+// import vlistgroup from './components/vlistgroup'
+import TestCompFn from './components/TestCompFn'
 
 export default {
   name: 'App',
   components: {
-    vlistgroup
+    TestCompFn
   },
   data () {
     return {
