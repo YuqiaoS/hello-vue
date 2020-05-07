@@ -16,9 +16,16 @@ export function useTest() {
   const changeToNewRef = function(){
     curVar.ref = ref(0)
   }
+
+  // original ref retains reactivity along with the assigned attr of the reactive piece
   const changeToTestRef = function(){
     curVar.ref = testVar
   }
+  const changeToCurrent = function(){
+    // assigning just to itself doesn't work. but you can ref-wrap the val
+    curVar.ref = ref(curVar.ref)
+  }
+
   const updateCurVar = function(){
     curVar.value++
     curVar.ref++
@@ -44,6 +51,7 @@ export function useTest() {
     curVar, 
     changeToTestRef, 
     changeToNewRef,
+    changeToCurrent,
     updateCurVar
   }
 }

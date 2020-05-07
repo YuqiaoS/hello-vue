@@ -4,6 +4,7 @@
         <button @click="updateCurVar">update cur</button>
         <button @click="changeToTestRef">change to test ref</button>
         <button @click="changeToNewRef">change to new ref</button>
+        <button @click="changeToCurrent">change to current ref</button>
     </div>
 </template>
 
@@ -17,7 +18,8 @@ export default {
         curVar,
         changeToNewRef,
         changeToTestRef,
-        updateCurVar
+        updateCurVar,
+        changeToCurrent
     } = useTest()
 
     watchEffect(() => {
@@ -29,7 +31,8 @@ export default {
         curVar,
         changeToNewRef,
         changeToTestRef,
-        updateCurVar
+        updateCurVar,
+        changeToCurrent
     }
   },
 //   watch:{
