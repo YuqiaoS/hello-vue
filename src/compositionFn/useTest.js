@@ -26,6 +26,11 @@ export function useTest() {
     curVar.ref = ref(curVar.ref)
   }
 
+  // this actually just updates the ref and trigger reactivity. ofc.
+  const changeRefToNewVal = function(){
+    curVar.ref = 33
+  }
+
   const updateCurVar = function(){
     curVar.value++
     curVar.ref++
@@ -51,6 +56,7 @@ export function useTest() {
     curVar, 
     changeToTestRef, 
     changeToNewRef,
+    changeRefToNewVal,
     changeToCurrent,
     updateCurVar
   }
